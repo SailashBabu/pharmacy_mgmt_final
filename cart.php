@@ -84,19 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Execute bulk write to update inventory
 
-    // // Check if any medicine's quantity is now zero and delete it
-    // foreach ($cart_items as $item) {
-    //     // Check if quantity is now zero after decrementing
-    //     $medicine_filter = ['Name' => $item['name']];
-    //     $updated_medicine = executeQuery('medicines', $medicine_filter);
-        
-    //     if (!empty($updated_medicine) && $updated_medicine[0]->Quantity <= 0) {
-    //         // Create a BulkWrite object for deleting medicine
-    //         $delete_bulk = new MongoDB\Driver\BulkWrite;
-    //         $delete_bulk->delete($medicine_filter);
-    //         executeBulkWrite('medicines', $delete_bulk);
-    //     }
-    // }
 
     // Insert transaction details into transactions collection
     $bulk_transaction = new MongoDB\Driver\BulkWrite;

@@ -9,21 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['print_bill']) && isse
     $transaction = executeQuery('transactions', $filter)[0] ?? null;
 
     if ($transaction) {
-        // Display the bill details in your desired format
-        // echo "<h1>Bill</h1>";
-        // echo "<p><strong>Customer Name:</strong> " . htmlspecialchars($transaction->customer_name) . "</p>";
-        // echo "<p><strong>Customer Mobile:</strong> " . htmlspecialchars($transaction->customer_mobile) . "</p>";
-        // echo "<p><strong>Doctor Name:</strong> " . htmlspecialchars($transaction->doctor_name) . "</p>";
-        // echo "<p><strong>Date/Time:</strong> " . htmlspecialchars($transaction->timestamp) . "</p>";
-        // echo "<h2>Items:</h2>";
-        // echo "<ul>";
-        // foreach ($transaction->items as $item) {
-        //     echo "<li>" . htmlspecialchars($item->name) . " - Qty: " . htmlspecialchars($item->quantity) . " @ ₹" . htmlspecialchars($item->price) . " each (Total: ₹" . htmlspecialchars($item->total_price) . ")</li>";
-        // }
-        // echo "</ul>";
-        // echo "<h3>Total Amount: ₹" . htmlspecialchars($transaction->total_amount) . "</h3>";
-        
-
         $customer_name = htmlspecialchars($transaction->customer_name);
         $customer_mobile = htmlspecialchars($transaction->customer_mobile);
         $doctor_name =htmlspecialchars($transaction->doctor_name) ;

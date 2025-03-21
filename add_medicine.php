@@ -1,32 +1,7 @@
 <?php
 include('connect.php');
 
-// Handle adding new medicines
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     $bulk = new MongoDB\Driver\BulkWrite;
-    
-//     // Validate input before inserting
-//     if (!empty($_POST['medicine_name']) && !empty($_POST['quantity']) && !empty($_POST['mrp'])) {
-//         $medicine = [
-//             'Name' => $_POST['medicine_name'],
-//             'Type' => $_POST['type'],
-//             'Manufacturer' => $_POST['manufacturer'],
-//             'Batch_No' => $_POST['batch_no'],
-//             'Expiry_Date' => $_POST['expiry_date'],
-//             'Quantity' => (int)$_POST['quantity'],
-//             'MRP' => (float)$_POST['mrp']
-//         ];
 
-//         // Insert medicine into the database
-//         $bulk->insert($medicine);
-//         executeBulkWrite('medicines', $bulk);
-//         echo "<script>alert('Medicine Added Successfully');</script>";
-//         header("Location: inventory.php");
-//         exit;
-//     } else {
-//         echo "<script>alert('Please fill all required fields.');</script>";
-//     }
-// }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Adjust your MongoDB connection details
     

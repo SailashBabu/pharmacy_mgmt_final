@@ -2,6 +2,7 @@
 // MongoDB connection setup using MongoDB\Driver\Manager
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017/");
 
+
 // Utility function to execute queries and return results
 function executeQuery($collection, $filter = [], $options = []) {
     global $manager;
