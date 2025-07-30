@@ -1,6 +1,15 @@
 <?php
 session_start();
 include('connect.php');
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Prevent caching
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 // Check if the cart is empty and redirect if necessary
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {

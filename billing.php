@@ -3,6 +3,15 @@ include('connect.php');
 
 // Start session
 session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Prevent caching
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 // Initialize an empty cart if not already set
 if (!isset($_SESSION['cart'])) {
@@ -10,12 +19,13 @@ if (!isset($_SESSION['cart'])) {
 }
 
 // Retrieve medicines from the database
-$filter = [];
+$filter = []; // Default filter
+$options = ['sort' => ['Name' => 1]]; // Sort by name in ascending order
 if (isset($_GET['search'])) {
     $search_term = $_GET['search'];
-    $filter = ['Name' => new MongoDB\BSON\Regex($search_term, 'i')];
+    $filter = ['Name' => new MongoDB\BSON\Regex($search_term, 'i')]; // Search by name
 }
-$medicines = executeQuery('medicines', $filter); // Fetch all medicines
+$medicines = executeQuery('medicines', $filter,$options); // Fetch all medicines
 
 // Handle form submission for going to cart
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['go_to_cart'])) {

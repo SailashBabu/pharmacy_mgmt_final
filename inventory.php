@@ -1,5 +1,16 @@
 <?php
+session_start();
 include('connect.php');
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Prevent caching
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 // Handle delete operation
 if (isset($_GET['delete_id'])) {
@@ -73,7 +84,8 @@ if (isset($_GET['search'])) {
     $search_term = $_GET['search'];
     $filter = ['Name' => new MongoDB\BSON\Regex($search_term, 'i')];
 }
-$medicines = executeQuery('medicines', $filter);
+$options = ['sort' => ['Name' => 1]]; // Sort by Name ascending
+$medicines = executeQuery('medicines', $filter, $options);
 ?>
 
 <!DOCTYPE html>

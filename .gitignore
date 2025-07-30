@@ -1,0 +1,30 @@
+# Ignore environment config
+.env
+
+# Ignore Composer dependencies
+/vendor/
+/composer.lock
+/composer.phar
+/composer.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor-specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and cache
+*.log
+logs/
+cache/
+
+# User uploads or runtime storage (if applicable)
+uploads/
+storage/
+
+# Node modules if used
+node_modules/

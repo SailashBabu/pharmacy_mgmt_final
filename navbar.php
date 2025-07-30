@@ -33,6 +33,7 @@
                 <a lass="menu-item" id="#order"href="low_stock.php"><p>Orders</p></a>
                 <a lass="menu-item" id="inventory"href="inventory.php"><p>Inventory</p></a>
                 <a lass="menu-item" id="#report" href="transactions.php"><p>Report</p></a>
+                <a class="menu-item" id="#logout" href="logout.php"><p>Logout</p></a>
             </div>
         </div>
 

@@ -1,6 +1,12 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+$mongoUri = $_ENV['MONGO_URI'];
+
 // MongoDB connection setup using MongoDB\Driver\Manager
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017/");
+$manager = new MongoDB\Driver\Manager($mongoUri);
 
 
 // Utility function to execute queries and return results
