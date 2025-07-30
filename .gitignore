@@ -2,7 +2,7 @@
 .env
 
 # Ignore Composer dependencies
-/vendor/
+
 /composer.lock
 /composer.phar
 
