@@ -1,5 +1,5 @@
 # Use official PHP with Apache image
-FROM php:8.2-apache
+FROM php:8.2.10-apache
 
 # Install MongoDB extension
 RUN apt-get update && \

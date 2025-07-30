@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +8,7 @@ session_start();
 </head>
 <body>
     <?php 
+    session_start();
     require_once __DIR__ . '/vendor/autoload.php';
 
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -35,8 +34,8 @@ session_start();
                 require_once 'includes/JWT.php';
                 $key = 'your-very-secret-key'; // Store securely
                 $payload = [
-                    'iss' => 'https://srisaisuriyamedicals.onrender.com/',
-                    'aud' => 'https://srisaisuriyamedicals.onrender.com/',
+                    'iss' => 'https://pharmacy-mgmt-final.onrender.com/',
+                    'aud' => 'https://pharmacy-mgmt-final.onrender.com/',
                     'iat' => time(),
                     'exp' => time() + 3600,
                     'username' => $username
