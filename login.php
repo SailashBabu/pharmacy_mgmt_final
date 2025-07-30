@@ -35,8 +35,8 @@ session_start();
                 require_once 'includes/JWT.php';
                 $key = 'your-very-secret-key'; // Store securely
                 $payload = [
-                    'iss' => 'http://localhost',
-                    'aud' => 'http://localhost',
+                    'iss' => 'https://srisaisuriyamedicals.onrender.com/',
+                    'aud' => 'https://srisaisuriyamedicals.onrender.com/',
                     'iat' => time(),
                     'exp' => time() + 3600,
                     'username' => $username
