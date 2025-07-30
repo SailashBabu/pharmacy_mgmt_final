@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: pharmacy-php-app
+    env: docker
+    plan: free
+    region: oregon
